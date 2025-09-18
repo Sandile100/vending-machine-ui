@@ -1,6 +1,8 @@
 import "./ProductDetails.css"
+import "./Dropdown.css"
 import React, { useEffect, useState } from "react";
 import { useLocation, useParams, useNavigate } from "react-router-dom";
+import Dropdown from "./Dropdown";
 
 function ProductDetails() {
   const location = useLocation();
@@ -36,21 +38,24 @@ function ProductDetails() {
 
     return (
 
-        <div className="product-details">
-             <button
-        type="button"
-        className="back-button"
-        onClick={() => navigate("/")}
-        aria-label="Go back to list"
-      >
-        ← Back
-      </button>
+        <><div className="product-details">
+        <button
+          type="button"
+          className="back-button"
+          onClick={() => navigate("/")}
+          aria-label="Go back to list"
+        >
+          ← Back
+        </button>
 
-            <h1>{productDetails.name}</h1>
-            <img src={`data:image/png;base64,${productDetails.imageid.content}`} alt={productDetails.name} className="picture" />
-            <p>{productDetails.description}</p>
-        </div>
+        <h1>{productDetails.name}</h1>
+        <img src={`data:image/png;base64,${productDetails.imageid.content}`} alt={productDetails.name} className="picture" />
+        <p>{productDetails.description}</p>
+      </div><div className="dropdown-container">
+          <Dropdown product={productDetails} />
+        </div></>
     );
+    
 }
 
 export default ProductDetails;

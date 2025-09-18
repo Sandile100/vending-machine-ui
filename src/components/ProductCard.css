@@ -41,6 +41,17 @@
     font-size: 1.5em;
     margin: 10px 0;
     color: #333;
+    transform: color 0.3s ease;
+}
+
+.info p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.info strong {
+    color: #333;
 }
 
 @keyframes slideIn {
