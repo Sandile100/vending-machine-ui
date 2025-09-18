@@ -1,0 +1,12 @@
+.dropdown-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    max-width: 960px;
+    margin: 20px auto;
+    color: #222;
+}
