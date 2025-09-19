@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# About
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a NodeJS React application that integrates with Spring boot API to serve vending machine functionality. Its a two page app with a landing page being a list of all the the products and their prices. You can click on the product to purchase it, which takes you to the 2nd page.
 
-## Available Scripts
+For convience a search functionality has been added on the landing page to speedup finding the product of interest.
 
-In the project directory, you can run:
+Known issues:
+   1. Sometimes products fail to load the full list due to image sizes being used. (Just refresh/Restart until a fix is in)
+   2. Still to implement admin page to maintain vending machine, like adding products and petty cash. Only back end API areimplemented for admin functionalities
 
-### `npm start`
+# Build
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+To build the app GitHub actions is used, where few steps, like packaging and testing are ran. From this public GitHub repository : https://github.com/Sandile100/vending-machine-ui
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Docker Hub integration
 
-### `npm test`
+Successful Build creates a docker image as part of CI/CD for the project and uploads it to public Docker Hub repository here : https://hub.docker.com/repository/docker/sandilembatha/vending-machine-ui
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Runing the project
 
-### `npm run build`
+To run the project including the backend api, a docker compose file has been added to the root folder of this project. This requires Docker to be install on the host machine. And the command below should be issued on the same directory as the docker-compose.yml file 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Command : docker compose -f .\docker-compose.yml up
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Alternatively one can checkout the project and run 'npm run build', this will require npm to be install on the host machine.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The application will then be served on http:localhost:3000
